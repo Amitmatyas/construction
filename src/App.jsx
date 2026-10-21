@@ -62,12 +62,12 @@ export default function App() {
       )}
       <Nav />
       <main>
-        {/* 1 the worker's world → 2 materials → 3 construction → 4 quality & safety → 5 the result → 6 contact */}
+        {/* promise → difference → how trust is built → standard → details → experience → the result → conversation */}
         <Hero />
         <Craft />
         <BuildSequence />
-        <ExplodedView />
         <Values />
+        <ExplodedView />
         <Services />
         <Process />
         <Reveal />

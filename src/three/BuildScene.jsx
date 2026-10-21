@@ -79,11 +79,10 @@ export default function BuildScene({ progress, visible, mobile, reduced }) {
       dpr={mobile ? [1, 1.25] : [1, 1.6]}
       frameloop={visible ? (reduced ? 'demand' : 'always') : 'never'}
       camera={{ position: [-13, 2.2, 8], fov: 38, near: 0.5, far: 120 }}
-      gl={{ antialias: !mobile, powerPreference: 'high-performance', toneMapping: THREE.ACESFilmicToneMapping }}
+      gl={{ alpha: true, antialias: !mobile, powerPreference: 'high-performance', toneMapping: THREE.ACESFilmicToneMapping }}
       aria-hidden="true"
     >
-      <color attach="background" args={['#0d0d0e']} />
-      <fog attach="fog" args={['#0d0d0e', 26, 62]} />
+      <fog attach="fog" args={['#101011', 26, 62]} />
       <StudioEnvironment />
       <Lights progress={progress} shadows={!mobile} />
       <CameraRig progress={progress} mobile={mobile} />

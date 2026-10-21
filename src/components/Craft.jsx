@@ -4,13 +4,13 @@ import { revealFade, drawBlueprints } from '../lib/reveals.js';
 import SectionHead from './SectionHead.jsx';
 import { HouseSection, SteelDetail, RebarGrid } from './Blueprints.jsx';
 
-const STATEMENT = 'בטון לא סולח על קיצורי דרך. לכן אני לא לוקח אותם — מהיסוד ועד השכבה האחרונה של הטיח.';
-const HIGHLIGHT = new Set(['קיצורי', 'דרך.']);
+const STATEMENT = 'רוב העבודה הטובה לא נראית לעין. היא נמצאת מתחת לטיח — ובכל מה שקורה לפני שמתחילים.';
+const HIGHLIGHT = new Set(['לא', 'נראית', 'לעין.']);
 
 const PILLARS = [
-  { title: 'ליווי אישי', body: 'אותו אדם מהמדידה הראשונה ועד המסירה.' },
-  { title: 'מחיר ברור', body: 'הצעה מפורטת בכתב, לפני שמתחילים.' },
-  { title: 'אתר מסודר', body: 'עבודה נקייה ובטוחה, בכל יום עבודה.' }
+  { title: 'קודם מבינים', body: 'מודדים, שואלים ומקשיבים — ורק אז מתחילים לעבוד.' },
+  { title: 'מילה אחת', body: 'מה שנאמר בשיחה נכתב בהצעה, ומה שנכתב — מתבצע.' },
+  { title: 'כתובת אחת', body: 'אחריות אישית מההתחלה ועד הסוף. לא צריך לרדוף אחרי אף אחד.' }
 ];
 
 export default function Craft() {
@@ -71,8 +71,8 @@ export default function Craft() {
   );
 
   return (
-    <section className="craft" id="craft" ref={root}>
-      <SectionHead num="02" name="חומרים ומלאכה" />
+    <section className="craft" id="difference" ref={root}>
+      <SectionHead num="02" name="ההבדל" />
 
       <h2 className="craft__statement">
         {STATEMENT.split(' ').map((w, i) => (
@@ -84,12 +84,12 @@ export default function Craft() {
         <figure className="panel panel--tall">
           <div className="panel__surface panel__surface--concrete" />
           <HouseSection />
-          <figcaption><span>01</span>שלד ומבנה</figcaption>
+          <figcaption><span>01</span>מה שמתחת לפני השטח</figcaption>
         </figure>
 
         <div className="craft__copy">
           <p className="craft__lede" data-reveal>
-            פלדה, בטון, בלוקים וטיח — חומרים פשוטים שדורשים ידיים מדויקות. אני עובד לפי תוכנית, מודד פעמיים, ולא ממשיך לשלב הבא לפני שהקודם נכון.
+            להבטיח תוצאה קל. לבנות דרך עבודה שאפשר לסמוך עליה — זה כבר עניין של אופי. הגישה שלי פשוטה: לתכנן לפני שמבצעים, לא לקצר דרכים, ולדבר איתכם בגובה העיניים לאורך כל הדרך.
           </p>
           <ul className="pillars">
             {PILLARS.map(p => (
@@ -104,13 +104,13 @@ export default function Craft() {
         <figure className="panel panel--steel">
           <div className="panel__surface panel__surface--steel" />
           <SteelDetail />
-          <figcaption><span>02</span>פלדה</figcaption>
+          <figcaption><span>02</span>כל חיבור נבדק</figcaption>
         </figure>
 
         <figure className="panel panel--rebar">
           <div className="panel__surface panel__surface--dark" />
           <RebarGrid />
-          <figcaption><span>03</span>בטון מזוין</figcaption>
+          <figcaption><span>03</span>בסיס שמחזיק</figcaption>
         </figure>
       </div>
 
@@ -118,7 +118,7 @@ export default function Craft() {
         <div className="marquee__track">
           {[0, 1].map(k => (
             <div className="marquee__set" key={k}>
-              {['שלד', 'טיח', 'ריצוף', 'איטום', 'שיפוץ', 'יציקה'].map(w => (
+              {['דיוק', 'שקיפות', 'אמינות', 'אחריות', 'סדר', 'כבוד'].map(w => (
                 <span key={w}>{w}<i>✕</i></span>
               ))}
             </div>

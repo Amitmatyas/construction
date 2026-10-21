@@ -3,10 +3,10 @@ import { gsap, useGSAP, prefersReducedMotion } from '../lib/motion.js';
 import SectionHead from './SectionHead.jsx';
 
 const VALUES = [
-  { letter: 'א', word: 'מקצועיות', body: 'עבודה לפי תוכנית ומפרט. בלי אלתורים ובלי "יהיה בסדר".' },
-  { letter: 'ב', word: 'אמינות', body: 'מה שסוכם — מתבצע. עדכון שוטף על כל שינוי, לפני שהוא קורה.' },
-  { letter: 'ג', word: 'דיוק', body: 'פלס, סרגל וזווית. ההבדל בין עבודה טובה למצוינת נמדד במילימטרים.' },
-  { letter: 'ד', word: 'בטיחות', body: 'קסדה, רתמה ונעלי מגן. אתר מגודר ומסודר — כל יום, בכל עבודה.' }
+  { letter: 'א', word: 'דיוק', body: 'פלס, סרגל ותוכנית. הסטנדרט לא משתנה כשאף אחד לא מסתכל.' },
+  { letter: 'ב', word: 'שקיפות', body: 'מחיר מפורט, לוח זמנים ברור, ועדכון לפני כל שינוי — לא אחריו.' },
+  { letter: 'ג', word: 'אמינות', body: 'להגיע בזמן, לענות לטלפון, לעמוד במה שסוכם. דברים פשוטים שעושים את ההבדל.' },
+  { letter: 'ד', word: 'כבוד', body: 'לבית שלכם, לשכנים ולזמן שלכם. אתר בטוח ומסודר בסוף כל יום עבודה.' }
 ];
 
 export default function Values() {
@@ -58,9 +58,9 @@ export default function Values() {
   );
 
   return (
-    <section className="values" id="values" ref={root}>
+    <section className="values" id="standard" ref={root}>
       <div className="values__pin">
-        <SectionHead num="05" name="בנוי להחזיק" light />
+        <SectionHead num="04" name="הסטנדרט" light />
         <span className="values__ghost" aria-hidden="true">א</span>
         <div className="values__stage">
           {VALUES.map(v => (

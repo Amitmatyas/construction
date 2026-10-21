@@ -5,11 +5,11 @@ import SectionHead from './SectionHead.jsx';
 import { StageArt } from './Blueprints.jsx';
 
 const STEPS = [
-  { title: 'פגישה ומדידה', body: 'מגיעים לשטח, מודדים ומבינים בדיוק מה צריך לקרות.' },
-  { title: 'הצעת מחיר', body: 'הצעה מפורטת בכתב: היקף העבודה, חומרים ולוח זמנים.' },
-  { title: 'הכנה ושלד', body: 'הכנת השטח, הריסה במידת הצורך, יסודות, יציקה ובנייה.' },
-  { title: 'גמר', body: 'טיח, ריצוף, חיפוי ואיטום — השכבות שרואים כל יום.' },
-  { title: 'מסירה', body: 'ניקיון יסודי, סיור משותף ובדיקה של כל פרט.' }
+  { title: 'שיחה', body: 'מספרים לי מה אתם מתכננים. אני שואל, מקשיב, ואומר בכנות אם ואיך זה אפשרי.' },
+  { title: 'פגישה בשטח', body: 'מגיעים, מודדים ורואים את המקום — כדי שההצעה תתבסס על המציאות.' },
+  { title: 'הצעה בכתב', body: 'היקף, חומרים ולוח זמנים, ברורים ומפורטים. אין התחייבות עד שהכול מוסכם.' },
+  { title: 'ביצוע בשקיפות', body: 'עדכונים לאורך הדרך, ושום שינוי בלי שאתם יודעים ומאשרים.' },
+  { title: 'מסירה', body: 'ניקיון יסודי וסיור משותף, עד שאתם מרוצים מכל פרט.' }
 ];
 
 export default function Process() {
@@ -75,8 +75,8 @@ export default function Process() {
     <section className="process" id="process" ref={root}>
       <div className="process__pin">
         <div className="process__head">
-          <SectionHead num="07" name="איך עובדים איתי" />
-          <h2 className="process__title">מהשיחה הראשונה<br /><em>ועד המסירה.</em></h2>
+          <SectionHead num="07" name="הדרך שלנו יחד" light />
+          <h2 className="process__title">עבודה טובה מתחילה<br /><em>הרבה לפני הביצוע.</em></h2>
         </div>
         <ol className="process__track">
           {STEPS.map((s, i) => (

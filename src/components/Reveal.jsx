@@ -55,10 +55,10 @@ export default function Reveal() {
         <div className="reveal__shade" aria-hidden="true" />
         <div className="reveal__copy">
           <h2 id="reveal-title" className="reveal__title split">
-            <span className="split__line"><span className="split__mask"><span className="split__inner">מה שנבנה נכון —</span></span></span>
-            <span className="split__line is-accent"><span className="split__mask"><span className="split__inner">נשאר.</span></span></span>
+            <span className="split__line"><span className="split__mask"><span className="split__inner">שקט נפשי</span></span></span>
+            <span className="split__line is-accent"><span className="split__mask"><span className="split__inner">נבנה מבחירה נכונה.</span></span></span>
           </h2>
-          <p className="reveal__sub">עבודה שעומדת במבחן הזמן, ולא רק במבחן המסירה.</p>
+          <p className="reveal__sub">כשהעבודה נעשית נכון, אתם פשוט חיים בבית — ולא חושבים עליה.</p>
         </div>
       </div>
     </section>

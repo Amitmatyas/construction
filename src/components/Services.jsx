@@ -6,10 +6,10 @@ import SplitLines from './SplitLines.jsx';
 import { ServiceArt } from './Blueprints.jsx';
 
 const SERVICES = [
-  { title: 'עבודות שלד', body: 'קירות בלוקים, יציקות, עמודים ותקרות — לפי תוכניות המהנדס, בדיוק ובסדר הנכון.', tag: 'בנייה חדשה · תוספות' },
-  { title: 'טיח ושפכטל', body: 'טיח פנים וחוץ, החלקה מושלמת והכנה לצבע. קיר שנראה כמו משטח אחד.', tag: 'פנים · חוץ' },
-  { title: 'ריצוף וחיפוי', body: 'פורצלן בפורמטים גדולים, חיפוי מטבחים וחדרי רחצה, פילוס בדיוק של מילימטר.', tag: 'פורצלן · אבן' },
-  { title: 'איטום ושיפוץ', body: 'איטום גגות ומרפסות ושיפוץ דירות מקצה לקצה, כולל הריסה ופינוי פסולת.', tag: 'גגות · דירות' }
+  { title: 'תשובה ישירה', body: 'שאלה מקבלת תשובה אמיתית — גם כשהתשובה היא "זה לא משתלם לכם".', tag: 'תקשורת' },
+  { title: 'הכול בכתב', body: 'היקף, חומרים ולוח זמנים — לפני שמתחילים. כך יודעים בדיוק למה לצפות.', tag: 'שקיפות' },
+  { title: 'בית מכובד', body: 'אזור עבודה מוגן, מעברים נקיים וסדר בסוף כל יום. אתם עדיין גרים כאן.', tag: 'כבוד' },
+  { title: 'איש קשר אחד', body: 'אדם אחד אחראי מההתחלה ועד המסירה, וזמין לאורך כל הדרך.', tag: 'אחריות' }
 ];
 
 export default function Services() {
@@ -64,11 +64,11 @@ export default function Services() {
   );
 
   return (
-    <section className="services" id="services" ref={root}>
-      <SectionHead num="06" name="שירותים" />
+    <section className="services" id="experience" ref={root}>
+      <SectionHead num="06" name="החוויה" />
       <div className="services__intro">
-        <SplitLines className="services__title big-title" lines={['מה אני', { text: 'בונה.', className: 'is-outline' }]} />
-        <p className="services__note">מבנייה חדשה ועד שיפוץ של חדר אחד — עם אותה הקפדה בכל היקף.</p>
+        <SplitLines className="services__title big-title" lines={['מה מקבלים', { text: 'מלבד קירות.', className: 'is-outline' }]} />
+        <p className="services__note">שיפוץ טוב נמדד גם בדרך: כמה ברור היה, כמה שקט היה, וכמה יכולתם לסמוך.</p>
       </div>
 
       <div className="services__list">

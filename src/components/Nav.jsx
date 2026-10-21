@@ -3,10 +3,10 @@ import { gsap, prefersReducedMotion } from '../lib/motion.js';
 import { CONTACT, BRAND } from '../content.js';
 
 const LINKS = [
-  ['#build', 'הבנייה'],
-  ['#details', 'איכות'],
-  ['#services', 'שירותים'],
-  ['#process', 'תהליך']
+  ['#difference', 'ההבדל'],
+  ['#standard', 'הסטנדרט'],
+  ['#details', 'הפרטים'],
+  ['#experience', 'החוויה']
 ];
 
 export default function Nav() {
@@ -51,7 +51,7 @@ export default function Nav() {
             <a key={href} href={href} className="cursor-target"><span data-text={label}>{label}</span></a>
           ))}
         </nav>
-        <a href="#contact" className="nav__cta cursor-target">דברו איתי</a>
+        <a href="#contact" className="nav__cta cursor-target">בואו נדבר</a>
         <button
           className="nav__burger"
           aria-label={open ? 'סגירת תפריט' : 'פתיחת תפריט'}
@@ -65,7 +65,7 @@ export default function Nav() {
 
       <div className={`menu${open ? ' is-open' : ''}`} id="menu" ref={menu} aria-hidden={!open} inert={open ? undefined : ''}>
         <nav className="menu__links" aria-label="תפריט נייד">
-          {[...LINKS, ['#contact', 'צור קשר']].map(([href, label], i) => (
+          {[...LINKS, ['#contact', 'בואו נדבר']].map(([href, label], i) => (
             <div className="menu__row" key={href}>
               <a href={href} onClick={() => setOpen(false)}>
                 <small>0{i + 1}</small>{label}
@@ -75,7 +75,7 @@ export default function Nav() {
         </nav>
         <div className="menu__foot">
           <a href={CONTACT.phoneHref} dir="ltr">{CONTACT.phone}</a>
-          <a href="#contact" onClick={() => setOpen(false)}>לתיאום הצעת מחיר ←</a>
+          <a href="#contact" onClick={() => setOpen(false)}>לשיחת היכרות ←</a>
         </div>
       </div>
     </>

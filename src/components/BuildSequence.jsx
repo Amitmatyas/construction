@@ -8,11 +8,11 @@ const BuildScene = lazy(() => import('../three/BuildScene.jsx'));
 
 // Caption ranges line up with the construction timeline in three/Building.jsx
 const STAGES = [
-  { at: 0, title: 'יסודות', body: 'הכול מתחיל בבסיס: מפולס, יציב ומדויק. מה שלא רואים — מחזיק את כל השאר.' },
-  { at: 0.1, title: 'עמודים', body: 'השלד עולה. כל עמוד במקומו, בפלס ובאנך.' },
-  { at: 0.3, title: 'קורות', body: 'הקורות נועלות את העמודים זה לזה, והמבנה הופך לשלם אחד.' },
-  { at: 0.5, title: 'תקרות', body: 'קומה אחר קומה. כל שכבה נבנית על הקודמת — ולכן חייבת להיות נכונה.' },
-  { at: 0.7, title: 'מעטפת', body: 'המבנה מקבל פנים: קירות, פתחים וגמר.' }
+  { at: 0, title: 'בסיס', body: 'לפני הבלוק הראשון — להבין מה אתם צריכים באמת. על בסיס לא נכון שום דבר לא יעמוד.' },
+  { at: 0.1, title: 'תוכנית', body: 'מה, מתי וכמה — כתוב ומוסכם מראש. תוכנית ברורה מחזיקה את כל הפרויקט.' },
+  { at: 0.3, title: 'תיאום', body: 'כל החלקים עובדים יחד. עדכון שוטף ושינויים רק בהסכמה — כדי שלא יהיו הפתעות.' },
+  { at: 0.5, title: 'עקביות', body: 'שלב אחר שלב, בלי לדלג. לא ממשיכים הלאה לפני שהשלב הקודם נכון.' },
+  { at: 0.7, title: 'תוצאה', body: 'מה שרואים בסוף הוא סכום של כל מה שנעשה נכון בדרך.' }
 ];
 
 export default function BuildSequence() {
@@ -89,10 +89,10 @@ export default function BuildSequence() {
         <div className="build__shade" aria-hidden="true" />
 
         <div className="build__intro">
-          <SectionHead num="03" name="מהיסוד ועד הגג" light />
+          <SectionHead num="03" name="שכבה על שכבה" light />
           <h2 id="build-title" className="build__title split">
-            <span className="split__line"><span className="split__mask"><span className="split__inner">ככה נבנה</span></span></span>
-            <span className="split__line is-accent"><span className="split__mask"><span className="split__inner">בניין.</span></span></span>
+            <span className="split__line"><span className="split__mask"><span className="split__inner">אמון נבנה</span></span></span>
+            <span className="split__line is-accent"><span className="split__mask"><span className="split__inner">כמו בניין.</span></span></span>
           </h2>
         </div>
 

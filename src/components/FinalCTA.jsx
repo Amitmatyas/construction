@@ -58,19 +58,19 @@ export default function FinalCTA() {
   return (
     <section className="final" id="contact" ref={root}>
       <span className="final__ghost" aria-hidden="true">בונים</span>
-      <SectionHead num="08" name="צור קשר" />
+      <SectionHead num="08" name="נדבר?" light />
 
       <SplitLines
         className="final__title"
-        lines={['יש לכם', { text: 'תוכנית?', className: 'is-accent' }, 'בואו נבנה.']}
+        lines={['בואו נבדוק', { text: 'אם אני', className: 'is-accent' }, 'מתאים לכם.']}
       />
-      <p className="final__lede" data-reveal>ספרו לי מה אתם מתכננים — בנייה, תוספת או שיפוץ. נקבע פגישה בשטח ונבין יחד מה נדרש.</p>
+      <p className="final__lede" data-reveal>שיחה קצרה, בלי התחייבות. ספרו לי מה אתם מתכננים — ונבין יחד אם ואיך נכון להתקדם.</p>
 
       <div className="final__grid">
         <div className="final__info" data-reveal>
           <Magnet padding={60} magnetStrength={4}>
             <a href={CONTACT.phoneHref} className="final__call cursor-target" data-cursor-label="חייגו">
-              <span className="final__call-label">התקשרו עכשיו</span>
+              <span className="final__call-label">לשיחה ישירה</span>
               <span className="final__call-num" dir="ltr">{CONTACT.phone}</span>
             </a>
           </Magnet>

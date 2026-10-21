@@ -2,7 +2,7 @@
    Construction worker site — industrial editorial. Charcoal / concrete / paper / safety orange
    ========================================================== */
 :root {
-  --ink: #0d0d0e;
+  --ink: #101011;
   --char: #151516;
   --steel: #23252a;
   --concrete: #8c8a85;
@@ -16,6 +16,18 @@
   --f-serif: 'Frank Ruhl Libre', 'Times New Roman', serif;
 
   --gutter: clamp(1.1rem, 4vw, 3.5rem);
+
+  /* Carbon-fibre twill: near-black tows, a few levels apart, so it only shows up close */
+  --cf-a: #121213;
+  --cf-b: #161618;
+  --cf-c: #19191b;
+  --carbon:
+    linear-gradient(27deg, var(--cf-a) 5px, transparent 5px) 0 5px,
+    linear-gradient(207deg, var(--cf-a) 5px, transparent 5px) 10px 0,
+    linear-gradient(27deg, var(--cf-c) 5px, transparent 5px) 0 10px,
+    linear-gradient(207deg, var(--cf-c) 5px, transparent 5px) 10px 5px,
+    linear-gradient(90deg, var(--cf-b) 10px, transparent 10px),
+    linear-gradient(var(--cf-b) 25%, var(--cf-a) 25%, var(--cf-a) 50%, transparent 50%, transparent 75%, var(--cf-c) 75%, var(--cf-c));
   --ease: cubic-bezier(0.19, 1, 0.22, 1);
   --concrete-tex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.55' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0 0.5 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
 }
@@ -40,6 +52,17 @@ body {
   overflow-x: hidden;
 }
 
+/* One continuous material behind every section: weave, then light, then vignette */
+body::before,
+body::after { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; }
+body::before { background: var(--carbon); background-color: var(--ink); background-size: 20px 20px; }
+body::after {
+  background:
+    radial-gradient(70% 55% at 72% 18%, rgba(255, 236, 220, 0.045), transparent 70%),
+    radial-gradient(55% 45% at 15% 85%, rgba(255, 90, 31, 0.025), transparent 70%),
+    radial-gradient(120% 100% at 50% 50%, transparent 45%, rgba(0, 0, 0, 0.6) 100%);
+}
+
 a { color: inherit; text-decoration: none; }
 h1, h2, h3, p, dl, dd, ol { margin: 0; padding: 0; }
 ol { list-style: none; }
@@ -58,7 +81,7 @@ svg { display: block; max-width: 100%; }
   transition: background 0.5s var(--ease), padding 0.5s var(--ease);
   mix-blend-mode: normal;
 }
-.nav.is-scrolled { background: rgba(13, 13, 14, 0.72); backdrop-filter: blur(14px) saturate(1.2); padding-block: calc(0.7rem + env(safe-area-inset-top, 0px)) 0.7rem; }
+.nav.is-scrolled { background: rgba(16, 16, 17, 0.78); backdrop-filter: blur(14px) saturate(1.2); padding-block: calc(0.7rem + env(safe-area-inset-top, 0px)) 0.7rem; }
 .nav__logo { display: flex; align-items: center; gap: 0.8rem; margin-inline-end: auto; }
 .nav__mark {
   display: grid; place-items: center; width: 2.6rem; height: 2.6rem;
@@ -151,7 +174,6 @@ svg { display: block; max-width: 100%; }
 .hero {
   position: relative; height: 100vh; height: 100svh; min-height: 640px; overflow: hidden;
   display: flex; align-items: center; padding-inline: var(--gutter);
-  background: var(--ink);
 }
 .hero__canvas { position: absolute !important; inset: 0; width: 100%; height: 100%; }
 .hero__canvas--fallback { background: radial-gradient(60% 50% at 30% 45%, #2a1a12, var(--ink)); }
@@ -187,7 +209,7 @@ svg { display: block; max-width: 100%; }
 
 /* ---------- 02 Craft ---------- */
 .craft {
-  position: relative; background: var(--paper); color: var(--ink);
+  position: relative; color: var(--paper);
   padding: clamp(6rem, 14vw, 12rem) var(--gutter) clamp(4rem, 8vw, 7rem);
 }
 .craft__statement {
@@ -262,12 +284,7 @@ svg { display: block; max-width: 100%; }
 .marquee__set i { font-style: normal; font-size: 0.35em; color: var(--orange); }
 
 /* ---------- 03 Services ---------- */
-.services { background: var(--char); padding: clamp(6rem, 12vw, 11rem) var(--gutter); position: relative; }
-.services::before {
-  content: ''; position: absolute; inset: 0; pointer-events: none; opacity: 0.35;
-  background-image: linear-gradient(rgba(239, 234, 226, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(239, 234, 226, 0.05) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
+.services { padding: clamp(6rem, 12vw, 11rem) var(--gutter); position: relative; }
 .services__intro { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 2rem; margin-bottom: clamp(3rem, 7vw, 6rem); }
 .services__note { max-width: 24ch; color: var(--concrete-lt); font-size: 1.1rem; }
 .services__list { position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(1rem, 2vw, 1.6rem); perspective: 1400px; }
@@ -276,16 +293,16 @@ svg { display: block; max-width: 100%; }
 .service__inner {
   position: relative; overflow: hidden; min-height: clamp(26rem, 42vw, 34rem);
   padding: clamp(1.6rem, 3vw, 2.6rem); display: flex; flex-direction: column; justify-content: space-between;
-  background: var(--steel); border: 1px solid rgba(239, 234, 226, 0.08);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012) 60%);
+  border: 1px solid rgba(239, 234, 226, 0.09);
+  backdrop-filter: blur(2px);
   transform-style: preserve-3d; will-change: transform;
 }
 .service__bg {
   position: absolute; inset: 0; z-index: 0;
   background:
-    radial-gradient(420px circle at var(--mx, -60%) var(--my, -60%), rgba(255, 90, 31, 0.18), transparent 60%),
-    var(--concrete-tex);
-  background-blend-mode: normal, overlay;
-  opacity: 0.8; transition: opacity 0.6s;
+    radial-gradient(420px circle at var(--mx, -60%) var(--my, -60%), rgba(255, 90, 31, 0.16), transparent 60%);
+  opacity: 1; transition: opacity 0.6s;
 }
 .service__bg::after {
   content: ''; position: absolute; inset: 0; background: var(--orange);
@@ -303,13 +320,12 @@ svg { display: block; max-width: 100%; }
 .service:hover .service__layer { transform: translateZ(90px) translateY(-8px); }
 
 /* ---------- 04 Values (pinned) ---------- */
-.values { position: relative; background: #1b1b1c; }
+.values { position: relative; }
 .values__pin {
   position: relative; height: 100vh; height: 100svh; overflow: hidden;
   padding: calc(6.5rem + env(safe-area-inset-top, 0px)) var(--gutter) 2.5rem;
   display: flex; flex-direction: column;
-  background: var(--concrete-tex), radial-gradient(90% 70% at 70% 60%, #2b2a29, #141414 75%);
-  background-blend-mode: overlay, normal;
+  background: radial-gradient(80% 70% at 70% 55%, rgba(255, 255, 255, 0.025), transparent 70%);
 }
 .values__ghost {
   position: absolute; inset-inline-start: -2vw; bottom: -14vw; pointer-events: none;
@@ -335,7 +351,7 @@ svg { display: block; max-width: 100%; }
 .values__bubble { position: absolute; top: 3px; right: 3px; width: 24px; height: 10px; border-radius: 6px; background: #c6ff3d; box-shadow: 0 0 12px rgba(198, 255, 61, 0.6); }
 
 /* ---------- 05 Process ---------- */
-.process { background: var(--paper); color: var(--ink); position: relative; }
+.process { color: var(--paper); position: relative; }
 .process__pin { position: relative; padding: clamp(6rem, 10vw, 8rem) var(--gutter) 3rem; }
 .process__head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 1rem 3rem; }
 .process__head .section-head { margin-bottom: 1.5rem; }
@@ -382,7 +398,7 @@ svg { display: block; max-width: 100%; }
 
 /* ---------- 06 Final CTA ---------- */
 .final {
-  position: relative; overflow: hidden; background: var(--paper); color: var(--ink);
+  position: relative; overflow: hidden; color: var(--paper);
   padding: clamp(6rem, 12vw, 10rem) var(--gutter) 0;
 }
 .final__ghost {
@@ -448,7 +464,7 @@ svg { display: block; max-width: 100%; }
 .pillar span { font-size: 0.95rem; color: #55534f; }
 
 /* ---------- 03 Build sequence (pinned WebGL) ---------- */
-.build { position: relative; background: var(--ink); }
+.build { position: relative; }
 .build__pin { position: relative; height: 100vh; height: 100svh; overflow: hidden; }
 .build__canvas { position: absolute !important; inset: 0; }
 .build__shade {
@@ -487,15 +503,13 @@ svg { display: block; max-width: 100%; }
 .build__bar span { display: block; height: 100%; background: var(--orange); transform: scaleX(0); transform-origin: right; }
 
 /* ---------- 04 Exploded view (light chapter) ---------- */
-.xview { position: relative; background: var(--paper-dk); color: var(--ink); }
+.xview { position: relative; color: var(--paper); }
 .xview__pin {
   position: relative; min-height: 100vh; min-height: 100svh; overflow: hidden;
   display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); align-items: center;
   padding: calc(6rem + env(safe-area-inset-top, 0px)) var(--gutter) 3rem;
-  background:
-    radial-gradient(60% 70% at 30% 55%, rgba(255, 255, 255, 0.55), transparent 70%),
-    var(--concrete-tex);
-  background-blend-mode: normal, soft-light;
+  /* a soft pool of light behind the joint keeps the 3D object the focal point */
+  background: radial-gradient(45% 55% at 28% 52%, rgba(255, 240, 225, 0.06), transparent 72%);
 }
 .xview__copy { position: relative; z-index: 2; display: grid; gap: 1.6rem; align-content: center; }
 .xview__copy .section-head { margin-bottom: 0.4rem; }
@@ -552,6 +566,48 @@ svg { display: block; max-width: 100%; }
 .field--select select:focus { outline: none; border-color: var(--orange-dk); }
 .field--select label { transform: translateY(-1.3rem) scale(0.75); color: var(--orange-dk); }
 
+
+/* ---------- Former light chapters, now on carbon ---------- */
+.statement__word.is-accent { color: var(--orange); }
+.craft__lede, .xview__lede, .final__lede { color: var(--concrete-lt); }
+.pillars { border-top-color: rgba(239, 234, 226, 0.16); }
+.pillar + .pillar { border-inline-start-color: rgba(239, 234, 226, 0.1); }
+.pillar span, .xview__detail span, .step p { color: #a9a59d; }
+.marquee { border-block-color: rgba(239, 234, 226, 0.1); }
+.marquee__set span:nth-child(even) { -webkit-text-stroke-color: rgba(239, 234, 226, 0.55); }
+.xview__title .is-accent .split__inner, .final__title .is-accent .split__inner, .process__title em { color: var(--orange); }
+.xview__toggle { border-color: rgba(239, 234, 226, 0.6); color: var(--paper); }
+.xview__toggle:hover, .xview__toggle[aria-pressed='true'] { background: var(--paper); color: var(--ink); border-color: var(--paper); }
+.xview__detail { border-top-color: rgba(239, 234, 226, 0.12); }
+.step { background: rgba(255, 255, 255, 0.025); }
+.step .stage-art { color: var(--concrete-lt); }
+.step__n { -webkit-text-stroke-color: rgba(239, 234, 226, 0.3); }
+@media (min-width: 900px) {
+  .process.is-horizontal .step { background: transparent; border-inline-start-color: rgba(239, 234, 226, 0.1); }
+  .process.is-horizontal .process__ruler { background: rgba(239, 234, 226, 0.15); }
+  .process__ruler i { background: rgba(239, 234, 226, 0.45); }
+}
+.final__ghost { -webkit-text-stroke-color: rgba(239, 234, 226, 0.05); }
+.final__call { background: var(--orange); color: var(--ink); }
+.final__call:hover { background: var(--paper); }
+.final__mail:hover { color: var(--orange); }
+.field input, .field textarea, .field--select select { color: var(--paper); border-bottom-color: rgba(239, 234, 226, 0.3); }
+.field--select select {
+  background-image: linear-gradient(45deg, transparent 50%, var(--paper) 50%), linear-gradient(-45deg, transparent 50%, var(--paper) 50%);
+}
+.field--select option { color: var(--ink); }
+.field label { color: #8f8b84; }
+.field :is(input, textarea):focus, .field--select select:focus { border-color: var(--orange); }
+.field :is(input, textarea):focus + label,
+.field :is(input, textarea):not(:placeholder-shown) + label,
+.field--select label { color: var(--orange); }
+.form .btn__fill { background: var(--paper); }
+.form .btn:hover { color: var(--ink); }
+.form__status.ok { color: #7fd1a3; }
+.form__status.err { color: #ff7b6b; }
+.footer { border-top-color: rgba(239, 234, 226, 0.1); color: #8f8b84; }
+.footer a:hover { color: var(--orange); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
   .nav__links { gap: 1.4rem; }
@@ -589,6 +645,7 @@ svg { display: block; max-width: 100%; }
 }
 @media (max-width: 520px) {
   .pillars { grid-template-columns: 1fr; }
+  .pillar + .pillar { padding-inline-start: 0; border-inline-start: 0; border-top: 1px solid rgba(239, 234, 226, 0.1); margin-top: 1.2rem; }
   .hero__actions { flex-direction: column; align-items: stretch; }
   .hero__actions .btn--primary { justify-content: space-between; width: 100%; }
   .hero__actions > div { width: 100%; }

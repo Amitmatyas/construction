@@ -7,9 +7,9 @@ import SplitLines from './SplitLines.jsx';
 const ExplodedScene = lazy(() => import('../three/ExplodedScene.jsx'));
 
 const DETAILS = [
-  ['פלס ואנך', 'עמוד שסוטה במילימטר למטה — סוטה בסנטימטרים למעלה.'],
-  ['חיבורים', 'כל בורג, כל ריתוך וכל עיגון נבדקים לפני שממשיכים.'],
-  ['בטיחות', 'ציוד מגן מלא לכל מי שנמצא באתר. בלי יוצא מן הכלל.']
+  ['הכנה', 'רוב הטעויות אפשר למנוע לפני שהן קורות.'],
+  ['דיוק', 'מילימטר בבסיס הופך לסנטימטר בגובה.'],
+  ['אחריות', 'בטיחות וסדר באתר הם חלק מהעבודה — לא תוספת.']
 ];
 
 export default function ExplodedView() {
@@ -84,10 +84,10 @@ export default function ExplodedView() {
         </div>
 
         <div className="xview__copy">
-          <SectionHead num="04" name="איכות בפרטים" />
-          <SplitLines as="h2" className="xview__title" lines={['פרטים קטנים.', { text: 'אחריות גדולה.', className: 'is-accent' }]} />
+          <SectionHead num="05" name="הפרטים" light />
+          <SplitLines as="h2" className="xview__title" lines={['ההבדל נמצא', { text: 'בפרטים הקטנים.', className: 'is-accent' }]} />
           <p className="xview__lede" id="xview-title">
-            מבנה חזק הוא סכום של חיבורים נכונים. כך נראה חיבור אחד — עמוד, קורות, ברגים ובטון — כשמפרקים אותו לחלקים.
+            חיבור אחד, מפורק לחלקיו. כל חלק כאן קטן — וכל אחד חייב להיות מדויק. כך אני ניגש לכל עבודה: גם לפרטים שאף אחד לא יראה.
           </p>
           <button type="button" className="xview__toggle cursor-target" onClick={toggle} aria-pressed={split}>
             <span className="xview__toggle-icon" aria-hidden="true" />

@@ -14,13 +14,13 @@ const pointer = { x: 0, y: 0 };
  * exploded offset/rotation; `amount` (0 assembled → 1 exploded) blends between them.
  */
 const PARTS = [
-  { key: 'slab', label: 'תקרת בטון', note: 'הבסיס שהכול נשען עליו', off: [0, -1.1, 0], rot: [0, 0, 0], labelAt: [-1.5, 0.35, 1.1] },
-  { key: 'plate', label: 'פלטת בסיס', note: 'מפזרת את העומס', off: [0, -0.75, 0], rot: [0, 0.4, 0], labelAt: [-0.9, 0, 0.5] },
-  { key: 'bolts', label: 'ברגי עיגון', note: 'נועלים את העמוד לבטון', off: [0, -0.2, 0], rot: [0, 0, 0], labelAt: [0.9, 0.15, -0.6] },
-  { key: 'column', label: 'עמוד פלדה', note: 'נושא את המשקל אל הקרקע', off: [0, 0.6, 0], rot: [0, 0.7, 0], labelAt: [0.7, -0.5, 0] },
-  { key: 'beamA', label: 'קורה ראשית', note: 'מחברת בין העמודים', off: [1.25, 0.7, 0], rot: [0, 0, 0.22], labelAt: [0.4, 0.45, 0] },
-  { key: 'beamB', label: 'קורה משנית', note: 'מייצבת לרוחב', off: [0, 0.55, 1.5], rot: [-0.25, 0, 0], labelAt: [0, 0.45, 0.2] },
-  { key: 'helmet', label: 'קסדת מגן', note: 'אף פעם לא אופציונלי', off: [-0.2, 2.4, 0.5], rot: [0.4, 1.2, -0.3], labelAt: [0.75, 0.55, 0] }
+  { key: 'slab', label: 'תקרת בטון', note: 'בסיס יציב לכל השאר', off: [0, -1.1, 0], rot: [0, 0, 0], labelAt: [-1.5, 0.35, 1.1] },
+  { key: 'plate', label: 'פלטת בסיס', note: 'מפזרת עומס, מונעת תזוזה', off: [0, -0.75, 0], rot: [0, 0.4, 0], labelAt: [-0.9, 0, 0.5] },
+  { key: 'bolts', label: 'ברגי עיגון', note: 'הפרט שאף אחד לא רואה', off: [0, -0.2, 0], rot: [0, 0, 0], labelAt: [0.9, 0.15, -0.6] },
+  { key: 'column', label: 'עמוד פלדה', note: 'ישר, בפלס ובאנך', off: [0, 0.6, 0], rot: [0, 0.7, 0], labelAt: [0.7, -0.5, 0] },
+  { key: 'beamA', label: 'קורה ראשית', note: 'מחברת את המבנה לשלם', off: [1.25, 0.7, 0], rot: [0, 0, 0.22], labelAt: [0.4, 0.45, 0] },
+  { key: 'beamB', label: 'קורה משנית', note: 'יציבות לכל הכיוונים', off: [0, 0.55, 1.5], rot: [-0.25, 0, 0], labelAt: [0, 0.45, 0.2] },
+  { key: 'helmet', label: 'קסדת מגן', note: 'בטיחות היא לא פשרה', off: [-0.2, 2.4, 0.5], rot: [0.4, 1.2, -0.3], labelAt: [0.75, 0.55, 0] }
 ];
 
 // on small screens only the main parts are labelled, so labels don't collide

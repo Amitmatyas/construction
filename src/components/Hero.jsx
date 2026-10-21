@@ -6,7 +6,7 @@ import Magnet from './reactbits/Magnet/Magnet.jsx';
 
 const HeroScene = lazy(() => import('../three/HeroScene.jsx'));
 
-const SERVICES = ['עבודות שלד', 'טיח', 'ריצוף וחיפוי', 'איטום', 'שיפוצים'];
+const PRINCIPLES = ['דיוק', 'שקיפות', 'אחריות אישית', 'כבוד לבית שלכם'];
 
 export default function Hero() {
   const root = useRef(null);
@@ -52,32 +52,32 @@ export default function Hero() {
       <div className="hero__vignette" aria-hidden="true" />
 
       <div className="hero__content">
-        <p className="label" data-hero-fade><span className="label__dot" />פועל בניין · עבודות שלד, גמר ושיפוצים</p>
+        <p className="label" data-hero-fade><span className="label__dot" />פועל בניין · בנייה ושיפוצים</p>
         <SplitLines
           as="h1"
           className="hero__title"
-          lines={['בונה את', { text: 'מה שנשאר.', className: 'is-accent' }]}
+          lines={['עבודה שאפשר', { text: 'לסמוך עליה.', className: 'is-accent' }]}
         />
         <p className="hero__sub" data-hero-fade>
-          בנייה ושיפוצים לבתים פרטיים — מהיסודות ועד הגמר, בעבודה מדויקת ובטוחה.
+          לפני הבטון והבלוקים יש אדם אחד שאחראי לכל פרט — ומחויב לעמוד במה שסוכם.
         </p>
         <div className="hero__actions" data-hero-fade>
           <Magnet padding={70} magnetStrength={3}>
-            <a href="#contact" className="btn btn--primary cursor-target" data-cursor-label="הצעת מחיר">
+            <a href="#contact" className="btn btn--primary cursor-target" data-cursor-label="בואו נדבר">
               <span className="btn__fill" />
-              <span className="btn__text" data-text="לתיאום הצעת מחיר">לתיאום הצעת מחיר</span>
+              <span className="btn__text" data-text="בואו נדבר על הפרויקט">בואו נדבר על הפרויקט</span>
               <span className="btn__arrow" aria-hidden="true">←</span>
             </a>
           </Magnet>
-          <a href="#build" className="btn btn--line cursor-target">איך אני עובד</a>
+          <a href="#difference" className="btn btn--line cursor-target">מה ההבדל</a>
         </div>
       </div>
 
-      <ul className="hero__services" aria-label="תחומי עבודה">
-        {SERVICES.map(s => <li key={s}>{s}</li>)}
+      <ul className="hero__services" aria-label="העקרונות שלי">
+        {PRINCIPLES.map(s => <li key={s}>{s}</li>)}
       </ul>
 
-      <a href="#craft" className="scroll-cue cursor-target" aria-label="גללו לפרק הבא">
+      <a href="#difference" className="scroll-cue cursor-target" aria-label="גללו לפרק הבא">
         <span className="scroll-cue__track"><span /></span>
         <span className="scroll-cue__text">גללו</span>
       </a>

@@ -107,11 +107,10 @@ export default function HeroScene({ visible }) {
       dpr={mobile ? [1, 1.5] : [1, 1.75]}
       frameloop={visible ? (reduced ? 'demand' : 'always') : 'never'}
       camera={{ position: [0, 0, 6.4], fov: 35 }}
-      gl={{ antialias: true, powerPreference: 'high-performance', toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.1 }}
+      gl={{ alpha: true, antialias: true, powerPreference: 'high-performance', toneMapping: THREE.ACESFilmicToneMapping, toneMappingExposure: 1.1 }}
       aria-hidden="true"
     >
-      <color attach="background" args={['#0d0d0e']} />
-      <fog attach="fog" args={['#0d0d0e', 6, 15]} />
+      <fog attach="fog" args={['#101011', 6, 15]} />
       <ambientLight intensity={0.08} />
       <spotLight position={[4, 6, 4]} angle={0.45} penumbra={0.9} intensity={60} color="#fff1e0" />
       <pointLight position={[-3, 1.5, -2.5]} intensity={18} color={ORANGE} distance={10} />
